@@ -1,0 +1,25 @@
+# patch_nfs_details.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nfs-client-provisioner
+  name: nfs-client-provisioner
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: nfs-client-provisioner
+  template:
+    spec:
+      containers:
+        - name: nfs-client-provisioner
+          env:
+            - name: NFS_SERVER
+              value: storage.massivecreationlab.com
+            - name: NFS_PATH
+              value: /mnt/user/Kubernetes
+      volumes:
+        - name: nfs-client-root
+          nfs:
+            server: storage.massivecreationlab.com
+            path: /mnt/user/Kubernetes
