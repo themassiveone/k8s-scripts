@@ -1,3 +1,0 @@
-namespace: nfs-provisioner
-bases:
-  - github.com/kubernetes-sigs/nfs-subdir-external-provisioner//deploy
