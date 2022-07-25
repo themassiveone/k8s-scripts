@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: apache
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
     - port: 80
       targetPort: 80
