@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: minimal-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: argo.massivecreationlab.com
+      http:
+        paths:
+          - path: /*
+            backend:
+              service:
+                name: argocd-argo-cd-server
+                port:
+                  number: 80
