@@ -1,0 +1,1 @@
+kubectl -n default delete pods --field-selector=status.phase=Failed
