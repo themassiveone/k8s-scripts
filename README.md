@@ -1,4 +1,4 @@
-# Cluster
+# k8s-scripts
 
 This is where i dump all of the kubernetes scripts or commands, i frequently use.
 
